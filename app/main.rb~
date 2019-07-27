@@ -1,0 +1,41 @@
+class Prototype
+  attr_accessor :inputs, :outputs, :state
+  
+  def tick
+    defaults
+    render
+    calc
+    process_inputs
+  end
+
+  def defaults
+    state.blockCord   ||= 200
+    #state.playerCord ||= [590, 230]
+  end
+
+  def render
+    #outputs.sprites << [200, 200, 50, 50, 'sprites/block.png']
+    #outputs.sprites << [state.playerCord[0], state.playerCord[1], 75, 150, 'sprites/stickFigure.png']
+  end
+
+  def calc
+
+  end
+
+  def process_inputs
+    if inputs.keyboard.key_up.r
+      $dragon.reset
+    end
+  end
+  
+end
+
+$prototype = Prototype.new
+
+def tick args
+  $prototype.inputs = args.inputs
+  $prototype.game = args.game
+  $prototype.outputs = args.outputs
+  $prototype.tick
+end
+
