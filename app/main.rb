@@ -64,10 +64,10 @@ class Prototype
         transitionPlayer(2) if inputs.keyboard.key_up.two   && state.currentPlayer != 2
         transitionPlayer(3) if inputs.keyboard.key_up.three && state.currentPlayer != 3
 
-        state.players[state.currentPlayer - 1].absolutex += state.walkingSpeed if inputs.keyboard.key_down.d
-        state.players[state.currentPlayer - 1].absolutex -= state.walkingSpeed if inputs.keyboard.key_down.a
-        state.players[state.currentPlayer - 1].absolutey += state.walkingSpeed if inputs.keyboard.key_down.w
-        state.players[state.currentPlayer - 1].absolutey -= state.walkingSpeed if inputs.keyboard.key_down.s
+        state.players[state.currentPlayer - 1].absolutex += state.walkingSpeed if inputs.keyboard.key_held.d
+        state.players[state.currentPlayer - 1].absolutex -= state.walkingSpeed if inputs.keyboard.key_held.a
+        state.players[state.currentPlayer - 1].absolutey += state.walkingSpeed if inputs.keyboard.key_held.w
+        state.players[state.currentPlayer - 1].absolutey -= state.walkingSpeed if inputs.keyboard.key_held.s
         
     end
 
